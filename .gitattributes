@@ -1,2 +1,28 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+void setup() {
+
+Serial.begin(9600);
+
+}
+
+int sensorPin = A0;
+int sensorValue = 0;
+
+void loop() {
+  
+  sensorValue = analogRead(sensorPin); //this will analog value from the sensor
+  
+  Serial.print("Soil Moisture Value: ");
+  Serial.println(sensorValue);
+
+  if (sensorValue > 800) {
+    Serial.println("Too moist");
+  } else if (sensorValue < 300) {
+    Serial.println("Too dry");
+  } else {
+    Serial.println("Good");
+   
+  }
+  
+
+ 
+}
